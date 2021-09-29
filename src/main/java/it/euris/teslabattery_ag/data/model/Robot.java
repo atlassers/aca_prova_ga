@@ -32,9 +32,9 @@ public class Robot implements Model {
   private Integer order;
   private RobotTask task;
 
-  @ManyToOne
-  @JoinColumn(name = "assemblyLine_id", nullable = false)
-  private AssemblyLine assemblyLine;
+ @ManyToOne
+ @JoinColumn(name = "assembly-Line-id", nullable = false)
+ private AssemblyLine assemblyLine;
 
   @Override
   public RobotDto toDto() {

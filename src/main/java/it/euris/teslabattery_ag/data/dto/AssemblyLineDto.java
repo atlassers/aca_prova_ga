@@ -19,20 +19,20 @@ import lombok.NoArgsConstructor;
 public class AssemblyLineDto implements Dto {
   private String id;
   private String name;
-  private String maxLength;
+  private String maxTimeDuration;
   @JsonIgnore
   private List<RobotDto> robots;
 
   @Override
   public AssemblyLine toModel() {
 
-    AssemblyLine al = AssemblyLine.builder().id(UT.toLong(id)).name(name)
-        .maxLength(UT.toDouble(maxLength)).build();
+    AssemblyLine assemblyLine = AssemblyLine.builder().id(UT.toLong(id)).name(name)
+        .maxTimeDuration(UT.toDouble(maxTimeDuration)).build();
     if (this.getRobots() != null) {
-      al.getRobots()
+      assemblyLine.getRobots()
           .addAll(this.getRobots().stream().map(RobotDto::toModel).collect(Collectors.toList()));
     }
-    return al;
+    return assemblyLine;
   }
 
 }

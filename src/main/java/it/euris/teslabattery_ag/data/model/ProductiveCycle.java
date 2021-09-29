@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 import it.euris.teslabattery_ag.data.archetype.Model;
 import it.euris.teslabattery_ag.data.dto.ProductiveCycleDto;
 import it.euris.teslabattery_ag.data.enums.ProductionStatus;
@@ -24,6 +26,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @Table(name = "productive_cycle")
 @Entity
+@SQLDelete(sql = "UPDATE productive_cycle p SET p.isDeleted=true WHERE id=?")
+@Where(clause = "deleted=false")
 public class ProductiveCycle implements Model {
 
   @Id

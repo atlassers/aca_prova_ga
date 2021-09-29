@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "assembly_line")
+@Table(name = "assembly-line")
 @Entity
 public class AssemblyLine implements Model {
 
@@ -28,7 +28,7 @@ public class AssemblyLine implements Model {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   private String name;
-  private Double maxLength; // max period
+  private Double maxTimeDuration; 
 
   @OneToMany(mappedBy = "assemblyLine")
   private List<Robot> robots;
@@ -43,6 +43,6 @@ public class AssemblyLine implements Model {
   @Override
   public AssemblyLineDto toDto() {
     return AssemblyLineDto.builder().id(id == null ? null : id.toString()).name(name)
-        .maxLength(maxLength.toString()).build();
+        .maxTimeDuration(maxTimeDuration.toString()).build();
   }
 }

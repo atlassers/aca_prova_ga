@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title> Academy </title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="academy.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+        <script src="services/ajax-core.js"></script>
+        <script src="services/base-service.js"></script>
+        <script src="services/student-service.js"></script>
+        <script src="academy.js"></script>
+    </head>
+
+    <body class="aca-center">
+        <div class="card text-center aca-card">
+            <img class="card-img-top" src="https://i.ytimg.com/vi/KqecsHPqX6Y/maxresdefault.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title text-center">Collegamento al BE</h5>
+                <p class="card-text text-center">Tabella per visualizzare la response del BE</p>
+                <button id="btnShow" class="btn btn-primary">show</button>
+                <button id="btnAdd" class="btn btn-secondary">add</button>
+                <div id="students" class="table mt-3"></div>
+            </div>
+            <form id="saveForm" class="saveForm">
+                <div class="form-group">
+                    <input id="studentId" class="form-control" type="text" name="studentId" placeholder="Student id">
+                </div>
+                <div class="form-group">
+                    <input id="name" class="form-control" type="text" name="name" placeholder="Enter Student Name">
+                </div>
+                <div class="form-group">
+                    <input id="birthDate" class="form-control" type="date" name="birthDate">
+                </div>
+                <div class="form-group">
+                    <input id="country" class="form-control" type="text" name="country" placeholder="Enter Student Country">
+                </div>
+                <div class="form-group">
+                    <input id="classroomId" class="form-control" type="number" name="classroomId"
+                        placeholder="Enter Classroom">
+                </div>
+                <div class="form-group">
+                    <input id="btnSubmit" class="form-control btn btn-primary" type="submit" value="Save Student">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
