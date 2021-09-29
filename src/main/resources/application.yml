@@ -1,0 +1,38 @@
+server:
+  port: 8100
+  servlet:
+    context-path: /teslabattery_ag
+spring:                                                                                                   
+  mvc:
+    throw-exception-if-no-handler-found: true  
+  application:
+    name: teslabattery_ag
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties: 
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+        jdbc:
+          time_zone: UTC
+  datasource:
+    url: jdbc:mysql://localhost:3306/teslabattery_ag?useLegacyDatetimeCode=false
+    username: academy
+    password: academy
+  security:
+    user:
+      name: academy
+      password: academy
+      roles: supervisor
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info,health,metrics,prometheus
+  endpoint:
+    health:
+      show-details: when-authorized
+  server:
+    port: 9100
+    base-path: /health
